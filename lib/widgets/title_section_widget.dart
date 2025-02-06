@@ -25,8 +25,9 @@ class TitleSection extends StatelessWidget {
                 Text(
                   intro,
                   softWrap: true,
+                  textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.grey[700],
+                    color: Colors.amber,
                   ),
                 )
               ]

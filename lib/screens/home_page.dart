@@ -23,8 +23,8 @@ class HomePage extends StatelessWidget {
               color: Colors.blueAccent,
               child: const TitleSection(
                 title: 'The Posh Boys App',
-                intro: 'Welcome to our app where you will find opening times, '
-                'events, offers, menus and much more!'
+                intro: 'Welcome to our app for opening times, '
+                'events, offers, and more!'
               ),
             ),
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:posh_boys_v2/widgets/event_list_widget.dart';
 import 'package:intl/intl.dart';
 import '../widgets/future_events_list.dart';
 // import '../models/event.dart';
@@ -18,7 +19,7 @@ class AllEventsPage extends StatelessWidget {
             itemCount: events.length,
             itemBuilder: (context, index) {
               final event = events[index];
-              final formattedDate = DateFormat('EEEE dd/MM/yyyy h:mm a').format(event.startDateTime);
+              final formattedDate = DateFormat('EEEE dd/MM/yyyy').format(event.startDate);
               return ListTile(
                 title: Center(child: Text(event.name)),
                 subtitle: Center(child: Text(formattedDate)),

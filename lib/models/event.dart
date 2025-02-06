@@ -1,8 +1,9 @@
+import 'package:intl/intl.dart';
 class Event {
   final String name;
   final String description;
   final String imageUrl;
-  final DateTime startDateTime;
+  final DateTime startDate;
 
   // Regular constructor
 
@@ -10,16 +11,18 @@ class Event {
     required this.name,
     required this.description,
     required this.imageUrl,
-    required this.startDateTime,
+    required this.startDate,
   });
 
   // Factory method to create an instance from JSON
   factory Event.fromJson(Map<String, dynamic> json) {
+    print(json);
     return Event(
-      name: json['name'] as String,
-      description: json['description'] as String,
-      imageUrl: json['imageUrl'] as String,
-      startDateTime: DateTime.parse(json['startDateTime'] as String),
+      name: json['eventname'].toString() as String,
+      description: json['eventdescription'] as String,
+      imageUrl: json['imageurl'] as String,
+      startDate: DateTime.fromMillisecondsSinceEpoch(int.parse(json['startdate'])),
+      //startDate: DateTime(2025, 2, 14),
     );
   }
 }

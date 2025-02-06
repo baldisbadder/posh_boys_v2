@@ -9,10 +9,13 @@ class EventListWidget extends StatelessWidget {
   List<Event> filterEventsForNext7Days(List<Event> events) {
     final now = DateTime.now();
     final sevenDaysFromNow = now.add(const Duration(days: 7));
-    return events.where((event) {
+    /* return events.where((event) {
       return event.startDateTime.isAfter(now) &&
              event.startDateTime.isBefore(sevenDaysFromNow);
-    }).toList();
+    }).toList(); */
+
+    // Temp line until we get date and time ***
+    return events.toList();
   }
 
   @override
@@ -30,10 +33,11 @@ class EventListWidget extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) {
             final event = filteredEvents[index];
-            final formattedDate = DateFormat('EEEE dd/MM/yyyy h:mm a').format(event.startDateTime);
+            // final formattedDate = DateFormat('EEEE dd/MM/yyyy h:mm a').format(event.startDateTime);
             return ListTile(
               title: Center(child: Text(event.name)),
-              subtitle: Center(child: Text(formattedDate)),
+              subtitle: Center(child: Text(event.description)),
+              // subtitle: Center(child: Text(formattedDate)),
             );
           },
         );
