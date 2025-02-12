@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+// import 'package:intl/intl.dart';
 import '../widgets/future_events_list.dart';
 import '../models/event.dart';
 
@@ -7,9 +7,10 @@ class EventListWidget extends StatelessWidget {
   const EventListWidget({super.key});
 
   List<Event> filterEventsForNext7Days(List<Event> events) {
+    /*
     final now = DateTime.now();
     final sevenDaysFromNow = now.add(const Duration(days: 7));
-    /* return events.where((event) {
+    return events.where((event) {
       return event.startDateTime.isAfter(now) &&
              event.startDateTime.isBefore(sevenDaysFromNow);
     }).toList(); */

@@ -1,4 +1,4 @@
-import 'package:intl/intl.dart';
+// import 'package:intl/intl.dart';
 class Event {
   final String name;
   final String description;
@@ -18,7 +18,7 @@ class Event {
   factory Event.fromJson(Map<String, dynamic> json) {
     print(json);
     return Event(
-      name: json['eventname'].toString() as String,
+      name: json['eventname'].toString(),
       description: json['eventdescription'] as String,
       imageUrl: json['imageurl'] as String,
       startDate: DateTime.fromMillisecondsSinceEpoch(int.parse(json['startdate'])),
